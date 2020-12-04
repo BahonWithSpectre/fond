@@ -1,7 +1,130 @@
-﻿@{
-    ViewData["Title"] = "About";
-}
-<h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
+﻿
+<link href="~/css/about.css" rel="stylesheet">
 
-<p>Use this area to provide additional information.</p>
+<link rel="stylesheet" type="text/css" href="~/slick/slick.css" />
+<link rel="stylesheet" type="text/css" href="~/slick/slick-theme.css" />
+
+<div class="content">
+
+    <div class="about const-container">
+        <div class="about_main">
+            <h1>Фонд туралы</h1>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Qui mollitia vel officiis, atque recusandae at eius id amet
+                repudiandae deleniti cupiditate nostrum saepe officia nobis.
+            </p>
+        </div>
+        <div class="about_with_img">
+            <div class="about_img">
+                <img src="~/img/help_about.png">
+            </div>
+            <div class="about_text_block">
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Qui mollitia vel officiis, atque recusandae at eius id amet
+                    repudiandae deleniti cupiditate nostrum saepe officia nobis.
+                </p>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Qui mollitia vel officiis, atque recusandae at eius id amet
+                    repudiandae deleniti cupiditate nostrum saepe officia nobis.
+                </p>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Qui mollitia vel officiis, atque recusandae at eius id amet
+                    repudiandae deleniti cupiditate nostrum saepe officia nobis.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="thanks const-container">
+        <h1>Алғыс хаттар</h1>
+        <div class="thanks_slider">
+            <div class="thanks_item">
+                <img src="~/img/svid.png">
+            </div>
+            <div class="thanks_item">
+                <img src="~/img/svid.png">
+            </div>
+            <div class="thanks_item">
+                <img src="~/img/svid.png">
+            </div>
+            <div class="thanks_item">
+                <img src="~/img/svid.png">
+            </div>
+            <div class="thanks_item">
+                <img src="~/img/svid.png">
+            </div>
+        </div>
+    </div>
+    <div class="document const-container">
+        <h1>Құжаттар</h1>
+        <div class="help_items">
+
+            <!-- MODAL -->
+             <div class="modal-screen">
+               <div class="modal-bg"></div>
+               <div class="modal-window">
+                  <div class="modal-section">
+                     <img src="">
+                  </div>
+               </div>
+            </div> 
+            <!-- MODAL -->
+
+            <div class="senim">
+                <img src="~/img/svid.png">
+            </div>
+            <div class="doc_text">
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Qui mollitia vel officiis, atque recusandae at eius id amet
+                    repudiandae deleniti cupiditate nostrum saepe officia nobis.
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Qui mollitia vel officiis, atque recusandae at eius id amet
+                    repudiandae deleniti cupiditate nostrum saepe officia nobis.
+                </p>
+                <div class="doc_images">
+                    <img src="~/img/svid.png">
+                    <img src="~/img/svid.png">
+                    <img src="~/img/svid.png">
+                    <img src="~/img/svid.png">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="~/slick/slick.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.thanks_slider').slick({
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            speed: 700,
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: { slidesToShow: 3 }
+                },
+                {
+                    breakpoint: 640,
+                    settings: { slidesToShow: 2, arrows: false }
+                },
+            ]
+        });
+
+        $('.senim > img, .doc_images > img').click(function (e) {
+            e.preventDefault();
+            new_src = $(this).attr('src');
+            $('.modal-section > img').attr('src', new_src);
+            $('.modal-screen').css('display', 'flex');
+        })
+        $('.close-mod, .modal-bg').click(function () {
+            $('.modal-screen').css('display', 'none');
+        })
+    });
+</script>
