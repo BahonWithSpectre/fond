@@ -1,0 +1,252 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meyirim Shuagy</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link href="~/css/const.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="~/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="~/slick/slick-theme.css" />
+    <script src="~/js/jQuery.js"></script>
+</head>
+<body>
+
+    <div class="wrap">
+        <div class="swipe-menu">
+            <div class="close">
+                <span></span>
+            </div>
+            <div class="lang">
+                <a href="" class="lang_active">ҚАЗ</a>
+                <a href="">РУС</a>
+            </div>
+            <a href="/Home/Index" class="fix-active">Басты бет</a>
+            <a href="#">Патранаж</a>
+            <a href="/Home/Event">Оқиғалар</a>
+            <a href="/Home/Project">Жобалар</a>
+            <a href="#">Біз туралы</a>
+            <a href="/Home/Guide">Сұрақ-жауап</a>
+            <a href="/Home/Contact">Байланыс</a>
+            <a href="#">СМИ Біз туралы</a>
+            <div class="social">
+                <a href="#" class="soc1">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="soc2">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <br>
+                <a href="#" class="soc3">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="#" class="soc4">
+                    <i class="fab fa-telegram-plane"></i>
+                </a>
+            </div>
+            <div class="phone-block">
+                <a href="tel:+77007007070">+7 (700) 700-70-70</a>
+                <a href="tel:+77007007070">+7 (700) 700-70-70</a>
+            </div>
+        </div>
+        <div class="header-wrap">
+            <div class="header const-container">
+                <div class="header-left">
+                    <a href="/Home/Index" class="logo">
+                        <img src="~/img/logo.png" alt="MEYIRIM SHUAGI">
+                    </a>
+                    <div class="nav">
+                        <div class="nav-item">
+                            <a href="/Home/Index" class="fix-active">Басты бет</a>
+                            <a href="#">Патранаж</a>
+                            <a href="/Home/Event" class="hide_item">Оқиғалар</a>
+                            <a href="/Home/Project">Жобалар</a>
+                        </div>
+                        <div class="nav-item">
+                            <a href="#" class="hide_item">Біз туралы</a>
+                            <a href="/Home/Guide">Сұрақ-жауап</a>
+                            <a href="/Home/Contact">Байланыс</a>
+                            <a href="#" class="hide_item">СМИ Біз туралы</a>
+                        </div>
+                        <div class="nav-item">
+                            <p class="otchet_text hide_item">
+                                Тамыз айында жиналды: <br>
+                                1 986 328 тг
+                            </p>
+                            <a href="#" class="otchet_btn">Жылдық есеп</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="phone-block">
+                        <a href="tel:+77007007070">+7 (700) 700-70-70</a>
+                        <a href="tel:+77007007070">+7 (700) 700-70-70</a>
+                    </div>
+                    <div class="lang">
+                        <a href="" class="lang_active">ҚАЗ</a>
+                        <a href="">РУС</a>
+                    </div>
+                    <!-- <div class="social">
+                       <a href="#" class="soc1">
+                          <i class="fab fa-instagram"></i>
+                       </a>
+                       <a href="#" class="soc2">
+                          <i class="fab fa-facebook-f"></i>
+                       </a>
+                       <br>
+                       <a href="#" class="soc3">
+                          <i class="fab fa-whatsapp"></i>
+                       </a>
+                       <a href="#" class="soc4">
+                          <i class="fab fa-telegram-plane"></i>
+                       </a>
+                    </div> -->
+                </div>
+                <div class="burger">
+                    <span></span>
+                </div>
+            </div>
+        </div>
+
+
+
+        @RenderBody()
+
+
+        <div class="fix_btn_block">
+            <div class="fix_btn_block_items">
+
+                <a href="https://wa.me/77079655393" class="fix_btn fix_btn_chat soc3">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </a>
+                <a href="" class="fix_btn fix_btn_chat soc4">
+                    <i class="fab fa-telegram-plane"></i>
+                    <span>Telegram</span>
+                </a>
+                <a href="" class="fix_btn fix_btn_chat soc1">
+                    <i class="fab fa-instagram"></i>
+                    <span>Instagram</span>
+                </a>
+                <a href="" class="fix_btn fix_btn_chat soc2">
+                    <i class="fab fa-facebook-f"></i>
+                    <span>Facebook</span>
+                </a>
+
+            </div>
+            <div class="fix_btn fix_btn_close">
+                <i class="fa fa-times"></i>
+                <!-- <span>Жабу</span> -->
+            </div>
+            <div class="fix_btn fix_btn_open">
+                <i class="fa fa-comments"></i>
+            </div>
+            <div class="fix_btn fix_btn_help">
+                <!-- <i class="fa fa-hands-helping"></i> -->
+                <img src="~/img/help_icon.png">
+                <span>Көмектесу</span>
+            </div>
+        </div>
+
+
+        <div class="footer-wrap">
+            <div class="footer-bg"></div>
+            <div class="footer const-container">
+                <div class="nav">
+                    <div class="nav-item">
+                        <a href="#" class="fix-active">Басты бет</a>
+                        <a href="#">Патранаж</a>
+                        <a href="#" class="hide_item">Оқиғалар</a>
+                        <a href="#">Жобалар</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="#" class="hide_item">Біз туралы</a>
+                        <a href="#">Сұрақ-жауап</a>
+                        <a href="#">Байланыс</a>
+                        <a href="#" class="hide_item">СМИ Біз туралы</a>
+                    </div>
+                </div>
+                <div class="erik-block">
+                    <a href="#" class="const-h2">Еріктілер өтініші</a>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="~/slick/slick.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(window).on('scroll', function () {
+                if ($(window).scrollTop() > 100) {
+                    $('.header').addClass('fix-header');
+                    $('.header-wrap').addClass('fix-header-wrap');
+                } else {
+                    $('.header').removeClass('fix-header');
+                    $('.header-wrap').removeClass('fix-header-wrap');
+                }
+            });
+            $('.burger').hover(function () {
+                $('.swipe-menu').toggleClass('active-menu')
+            })
+            $('.close').click(function () {
+                $('.swipe-menu').removeClass('active-menu')
+            })
+
+            $('.main-bg').slick({
+                dots: false,
+                infinite: true,
+                speed: 300,
+                fade: true,
+                cssEase: 'linear',
+                autoplay: true
+            });
+
+            $('.pay_nav > div').click(function (e) {
+                e.preventDefault();
+                $('.pay_nav > div').removeClass('pay_nav_active');
+                $(this).addClass('pay_nav_active');
+
+                $('.pay_body').removeClass('pay_body_active');
+                $('.pay_body').eq($(this).index()).addClass('pay_body_active');
+            });
+
+            $('.senim img').click(function (e) {
+                e.preventDefault();
+                new_src = $(this).attr('src');
+                $('.modal-section > img').attr('src', new_src);
+                $('.modal-screen').css('display', 'flex');
+            })
+            $('.close-mod, .modal-bg').click(function () {
+                $('.modal-screen').css('display', 'none');
+            })
+
+
+            $('.fix_btn_open').click(function () {
+                $('.fix_btn_close').toggleClass('fix_btn_close_active').toggleClass('fix_btn_rotate');
+
+                $('.fix_btn_block_items').slideToggle(100);
+                $('.fix_btn_block_items > *').css('opacity', 1);
+            });
+            $('.fix_btn_close').click(function () {
+                $('.fix_btn_close').toggleClass('fix_btn_rotate').toggleClass('fix_btn_close_active');
+                $('.fix_btn_block_items').slideToggle(100);
+                $('.fix_btn_block_items > *').css('opacity', 1);
+            });
+            $('.fix_btn_help').click(function () {
+                var offset = 0;
+                $('html, body').animate({
+                    scrollTop: $('.help').offset().top - 70
+                }, 300);
+                return false;
+            });
+        })
+    </script>
+
+
+</body>
+</html>
