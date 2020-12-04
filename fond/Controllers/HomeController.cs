@@ -5,11 +5,19 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using fond.Models;
+using fond.DbFolder;
 
 namespace fond.Controllers
 {
     public class HomeController : Controller
     {
+
+        private readonly AppDb db;
+
+        public HomeController(AppDb _db)
+        {
+            db = _db;
+        }
         public IActionResult Index()
         {
             return View();
