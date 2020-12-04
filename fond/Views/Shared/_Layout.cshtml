@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meyirim Shuagy</title>
 
+    <link rel="shortcut icon" href="~/img/favicon.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link href="~/css/const.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="~/slick/slick.css" />
-    <link rel="stylesheet" type="text/css" href="~/slick/slick-theme.css" />
     <script src="~/js/jQuery.js"></script>
 </head>
 <body>
@@ -26,7 +25,7 @@
             <a href="#">Патранаж</a>
             <a href="/Home/Event">Оқиғалар</a>
             <a href="/Home/Project">Жобалар</a>
-            <a href="#">Біз туралы</a>
+            <a href="/Home/About">Біз туралы</a>
             <a href="/Home/Guide">Сұрақ-жауап</a>
             <a href="/Home/Contact">Байланыс</a>
             <a href="#">СМИ Біз туралы</a>
@@ -64,7 +63,7 @@
                             <a href="/Home/Project">Жобалар</a>
                         </div>
                         <div class="nav-item">
-                            <a href="#" class="hide_item">Біз туралы</a>
+                            <a href="/Home/About" class="hide_item">Біз туралы</a>
                             <a href="/Home/Guide">Сұрақ-жауап</a>
                             <a href="/Home/Contact">Байланыс</a>
                             <a href="#" class="hide_item">СМИ Біз туралы</a>
@@ -88,20 +87,20 @@
                         <a href="">РУС</a>
                     </div>
                     <!-- <div class="social">
-                       <a href="#" class="soc1">
-                          <i class="fab fa-instagram"></i>
-                       </a>
-                       <a href="#" class="soc2">
-                          <i class="fab fa-facebook-f"></i>
-                       </a>
-                       <br>
-                       <a href="#" class="soc3">
-                          <i class="fab fa-whatsapp"></i>
-                       </a>
-                       <a href="#" class="soc4">
-                          <i class="fab fa-telegram-plane"></i>
-                       </a>
-                    </div> -->
+                   <a href="#" class="soc1">
+                      <i class="fab fa-instagram"></i>
+                   </a>
+                   <a href="#" class="soc2">
+                      <i class="fab fa-facebook-f"></i>
+                   </a>
+                   <br>
+                   <a href="#" class="soc3">
+                      <i class="fab fa-whatsapp"></i>
+                   </a>
+                   <a href="#" class="soc4">
+                      <i class="fab fa-telegram-plane"></i>
+                   </a>
+                </div> -->
                 </div>
                 <div class="burger">
                     <span></span>
@@ -149,21 +148,133 @@
             </div>
         </div>
 
+        <!-- PAY_MODAL -->
+
+        <div class="pay_modal">
+            <div class="modal-bg"></div>
+            <div class="modal-window">
+                <div class="modal-section">
+                    <div class="pay_block">
+                        <div class="pay_nav">
+                            <div class="pay_nav_active">
+                                <img src="~/img/pay_icons/visa.png">
+                            </div>
+                            <div>
+                                <img src="~/img/pay_icons/kaspi.png">
+                                <span>Kaspi GOLD</span>
+                            </div>
+                            <div>
+                                <img src="~/img/pay_icons/paybox.png">
+                            </div>
+                            <div>
+                                <img src="~/img/pay_icons/bank.png">
+                                <span>БАНК</span>
+                            </div>
+                            <div>
+                                <img src="~/img/pay_icons/convert.png">
+                                <span>Конверт</span>
+                            </div>
+                            <div>
+                                <img src="~/img/pay_icons/office.png">
+                                <span>Офис</span>
+                            </div>
+                        </div>
+                        <div class="pay_body pay_body_active">
+                            <div class="pay_form">
+                                <p>Cіз мұнда банк картасынан қаражат жіберу арқылы мұқтаждарға көмектесе аласыз!</p>
+                                <input type="number" placeholder="Төлем мөлшері">
+                            </div>
+                            <div class="pay_btn_block">
+                                <button class="pay_btn1">Көмектесу</button>
+                                <button class="pay_btn2">Кері байланыс</button>
+                            </div>
+                        </div>
+                        <div class="pay_body pay_body_kaspi">
+                            <img src="~/img/gold.png">
+                            <div class="kaspi_text">
+                                <p>Жолдасбек А. <br> +7 (700) 700-70-70</p>
+                                <br>
+                                <p>Карта: <br> 5169-0000-0000-1234</p>
+                            </div>
+                        </div>
+                        <div class="pay_body">
+                            <div class="pay_form">
+                                <p>Cіз мұнда банк картасынан қаражат жіберу арқылы мұқтаждарға көмектесе аласыз!</p>
+                                <input type="number" placeholder="Төлем мөлшері">
+                                <div class="pay_icons">
+                                    <img src="~/img/pay_icons/kassa24.png">
+                                    <img src="~/img/pay_icons/alfa-logo.png">
+                                </div>
+                            </div>
+                            <div class="pay_btn_block">
+                                <button class="pay_btn1">Көмектесу</button>
+                                <button class="pay_btn2">Кері байланыс</button>
+                            </div>
+                        </div>
+                        <div class="pay_body pay_body_bank">
+                            <span style="display: block; margin-bottom: 5px;">
+                                Реквизиты для перечисление на расчетный счет фонда: <strong>"Мейірім Шуағы"</strong>
+                            </span>
+
+                            <span>
+                                <strong>РНН:</strong> 600 900 598 045
+                            </span>
+                            <span>
+                                <strong>БИН:</strong> 071040022302
+                            </span>
+                            <span>
+                                <strong>Р/счет:</strong> KZ686017131000053274 в АО «Народный банк Казахстана»
+                            </span>
+                            <span>
+                                <strong>БИК:</strong> HSBKKZKX
+                            </span>
+                            <span>
+                                <strong>Кбе:</strong> 18
+                            </span>
+                            <span>
+                                <strong>КНП:</strong> 119
+                            </span>
+                            <span>
+                                <strong>Адрес:</strong> 050006, г.Алматы, мкр. Калкаман 2, ул. Усенова 12
+                            </span>
+                        </div>
+                        <div class="pay_body pay_body_convert">
+                            <p>Көмектесу үшін <span style="font-family: MyBold;">"Мейірім конвертіне"</span> тапсырыс бере аласыз. ТАПСЫРЫС БЕРУ:</p>
+                            <!-- <p>ТАПСЫРЫС БЕРУ:</p> -->
+                            <div class="convert_form">
+                                <input type="text" placeholder="Аты-жөніңіз">
+                                <input type="tel" placeholder="Телефон">
+                                <button>ТАПСЫРЫС БЕРУ</button>
+                                <p>Біз сізге жақын уақытта "Мейірім конвертін" жеткізіп береміз</p>
+                            </div>
+                        </div>
+                        <div class="pay_body pay_body_convert">
+                            <p>Сіз біздің офиске келіп көмектесе аласыз.</p>
+                            <strong>Біздің мекен-жайымыз:</strong>
+                            <p>Шымкент қаласы, Орда микрорайоны</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PAY_MODAL -->
+
 
         <div class="footer-wrap">
             <div class="footer-bg"></div>
             <div class="footer const-container">
                 <div class="nav">
                     <div class="nav-item">
-                        <a href="#" class="fix-active">Басты бет</a>
+                        <a href="/Home/Index" class="fix-active">Басты бет</a>
                         <a href="#">Патранаж</a>
-                        <a href="#" class="hide_item">Оқиғалар</a>
-                        <a href="#">Жобалар</a>
+                        <a href="/Home/Event" class="hide_item">Оқиғалар</a>
+                        <a href="/Home/Project">Жобалар</a>
                     </div>
                     <div class="nav-item">
-                        <a href="#" class="hide_item">Біз туралы</a>
-                        <a href="#">Сұрақ-жауап</a>
-                        <a href="#">Байланыс</a>
+                        <a href="/Home/About" class="hide_item">Біз туралы</a>
+                        <a href="/Home/Guide">Сұрақ-жауап</a>
+                        <a href="/Home/Contact">Байланыс</a>
                         <a href="#" class="hide_item">СМИ Біз туралы</a>
                     </div>
                 </div>
@@ -178,14 +289,14 @@
 
     </div>
 
-    <script type="text/javascript" src="~/slick/slick.min.js"></script>
-    <script>
+    <script type="text/javascript">
         $(document).ready(function () {
             $(window).on('scroll', function () {
                 if ($(window).scrollTop() > 100) {
                     $('.header').addClass('fix-header');
                     $('.header-wrap').addClass('fix-header-wrap');
-                } else {
+                }
+                else {
                     $('.header').removeClass('fix-header');
                     $('.header-wrap').removeClass('fix-header-wrap');
                 }
@@ -197,14 +308,6 @@
                 $('.swipe-menu').removeClass('active-menu')
             })
 
-            $('.main-bg').slick({
-                dots: false,
-                infinite: true,
-                speed: 300,
-                fade: true,
-                cssEase: 'linear',
-                autoplay: true
-            });
 
             $('.pay_nav > div').click(function (e) {
                 e.preventDefault();
@@ -215,15 +318,6 @@
                 $('.pay_body').eq($(this).index()).addClass('pay_body_active');
             });
 
-            $('.senim img').click(function (e) {
-                e.preventDefault();
-                new_src = $(this).attr('src');
-                $('.modal-section > img').attr('src', new_src);
-                $('.modal-screen').css('display', 'flex');
-            })
-            $('.close-mod, .modal-bg').click(function () {
-                $('.modal-screen').css('display', 'none');
-            })
 
 
             $('.fix_btn_open').click(function () {
@@ -238,15 +332,21 @@
                 $('.fix_btn_block_items > *').css('opacity', 1);
             });
             $('.fix_btn_help').click(function () {
-                var offset = 0;
-                $('html, body').animate({
-                    scrollTop: $('.help').offset().top - 70
-                }, 300);
-                return false;
+                try {
+                    var offset = 0;
+                    $('html, body').animate({
+                        scrollTop: $('.help').offset().top - 70
+                    }, 300);
+                    return false;
+                }
+                catch {
+                    $('.pay_modal').css('display', 'flex');
+                }
             });
+            $('.modal-bg').click(function () {
+                $('.pay_modal').css('display', 'none');
+            })
         })
     </script>
-
-
 </body>
 </html>
