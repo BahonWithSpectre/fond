@@ -50,6 +50,11 @@ namespace fond.Controllers
             return View();
         }
 
+        public IActionResult Smi()
+        {
+            return View();
+        }
+
 
         public IActionResult Contact()
         {
