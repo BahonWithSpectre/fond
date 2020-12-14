@@ -1,0 +1,123 @@
+@import url('const.css');
+
+:root {
+   --button: #e05930;
+   /* --blueDark: #1c51bc;
+   --blueOther: #186694; */
+   --blueDark: #7bccfb;
+   --blueOther: #7bccfb;
+   --blueLight: #7bccfb;
+   /* --blueDark: #f05e51;
+   --blueOther: #f05e51;
+   --blueLight: #f05e51; */
+   /* --greenLight: #86a850;
+   --greenDark: #7e9820;
+   --greenExtraLight: #b2cb59; */
+   /* --greenLight: #17623d;
+   --greenDark: #17623d;
+   --greenExtraLight: #17623d;  */
+   --greenLight: #1f6842;
+   --greenDark: #1f6842;
+   --greenExtraLight: #1f6842;
+   --greenOther: #e1f4e8;
+   --font1: #242424;
+   --font2: #1381bf;
+   --font3: #999;
+}
+
+/* ----------------Constants------------------ */
+.const-h2{
+   display: inline-block;
+   padding: 10px 20px;
+   text-transform: uppercase;
+   background-color: var(--greenLight);
+   color: white;
+   box-shadow: 0 0 3px var(--blueDark);
+   border-radius: 7px;
+   letter-spacing: 0.5px;
+}
+
+.btn_head{
+   display: flex;
+   align-items: center;
+   /* justify-content: center; */
+   margin-bottom: 5px;
+}
+/* ----------------CONTENT------------------ */
+
+/* .wrap{
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+} */
+.content{
+   min-height: 80vh;
+}
+/* ------------ EVENT ----------- */
+
+
+.tables table{
+   width: 100%;
+   border-collapse: collapse;
+   margin-top: 20px;
+   box-shadow: 0 0 3px var(--greenDark);
+   transition: 0.2s;
+}
+.tables table tr:first-child > th{
+   box-shadow: 0 0 1px var(--greenDark);
+   padding: 15px;
+}
+.tables table th{
+   font-family: MyBold;
+   /* background-color: var(--greenDark); */
+   /* color: white; */
+}
+.tables table td, .tables table th{
+   padding: 15px;
+   text-align: left;
+   box-shadow: 0 0 1px var(--greenDark);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----------------------- */
+
+
+@media (max-width: 1200px) {
+   
+}
+@media  (max-width: 992px){
+
+}
+@media  (max-width: 768px){
+}
+
+@media  (max-width: 640px){
+}
+@media  (max-width: 530px){
+}
+@media  (max-width: 425px){
+   .const-h2{
+      font-size: 14px;
+   }
+}
+@media  (max-width: 375px){
+   .const-h2{
+      font-size: 13px;
+   }
+}
+@media  (max-width: 360px){
+}
+@media  (max-width: 320px){
+}
