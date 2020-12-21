@@ -61,7 +61,7 @@ namespace fond
             app.UseAuthentication();    // аутентификация
                                         // авторизация 
 
-            app.UseAuthorization();
+        //    app.UseAuthorization();
 
             app.UseMvc(routes =>
             {
