@@ -50,6 +50,21 @@ namespace fond.Controllers
             return View();
         }
 
+        public IActionResult Smi()
+        {
+            return View();
+        }
+
+        public IActionResult Otchet()
+        {
+            return View();
+        }
+
+        public IActionResult OtchetTable()
+        {
+            return View();
+        }
+
 
         public IActionResult Contact()
         {

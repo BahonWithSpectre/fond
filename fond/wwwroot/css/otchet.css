@@ -1,0 +1,337 @@
+@import url('const.css');
+
+:root {
+   --button: #e05930;
+   /* --blueDark: #1c51bc;
+   --blueOther: #186694; */
+   --blueDark: #7bccfb;
+   --blueOther: #7bccfb;
+   --blueLight: #7bccfb;
+   /* --blueDark: #f05e51;
+   --blueOther: #f05e51;
+   --blueLight: #f05e51; */
+   /* --greenLight: #86a850;
+   --greenDark: #7e9820;
+   --greenExtraLight: #b2cb59; */
+   /* --greenLight: #17623d;
+   --greenDark: #17623d;
+   --greenExtraLight: #17623d;  */
+   --greenLight: #1f6842;
+   --greenDark: #1f6842;
+   --greenExtraLight: #1f6842;
+   --greenOther: #e1f4e8;
+   --font1: #242424;
+   --font2: #1381bf;
+   --font3: #999;
+}
+
+/* ----------------Constants------------------ */
+.const-h2{
+   display: inline-block;
+   padding: 10px 20px;
+   text-transform: uppercase;
+   background-color: var(--greenLight);
+   color: white;
+   box-shadow: 0 0 3px var(--blueDark);
+   border-radius: 7px;
+   letter-spacing: 0.5px;
+}
+
+.btn_head{
+   display: flex;
+   align-items: center;
+   /* justify-content: center; */
+   margin-bottom: 5px;
+}
+/* ----------------CONTENT------------------ */
+
+/* .wrap{
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+} */
+.content{
+   min-height: 80vh;
+}
+/* ------------ EVENT ----------- */
+
+
+.otchet_items, .convert{
+   display: flex;
+   position: relative;
+   /* justify-content: space-between; */
+}
+.convert{
+   flex-direction: column;
+   align-items: start;
+}
+.convert, .year{
+   width: 400px;
+   padding-right: 50px;
+   border-right: 2px solid;
+}
+.year{
+   padding-left: 50px;
+}
+.year > h2{
+   background-color: var(--button);
+   box-shadow: 0 0 3px var(--button);
+}
+.convert > *, .year > *{
+   margin-bottom: 15px;
+   text-decoration: none;
+}
+.convert > *:last-child, .year > *:last-child{
+   margin-bottom: 0;
+}
+.convert > input{
+   width: 100%;
+   border-radius: 10px;
+   outline: none;
+   border: none;
+   box-shadow: 0 0 5px var(--greenDark);
+   padding: 10px;
+   padding-left: 15px;
+}
+.convert > button, .year > a{
+   width: 100%;
+   border-radius: 10px;
+   outline: none;
+   padding: 10px 35px;
+   background-color: var(--greenDark);
+   box-shadow: 0 0 5px var(--greenDark);
+   color: white;
+}
+.year > a{
+   background-color: var(--button);
+   box-shadow: 0 0 5px var(--button);
+}
+
+
+
+.help_btn_fix_block {
+   padding: 15px;
+   text-decoration: none;
+   position: absolute;
+   right: 0;
+   background-color: var(--blueLight);
+   border-radius: 10px;
+}
+.help_btn_fix{
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+}
+.help_btn_fix > img{
+   height: 25px;
+   margin-left: 5px;
+}
+
+
+
+.result_convert{
+   width: 350px;
+   margin-top: 30px;
+   border: 1px solid var(--button);
+   border-radius: 10px;
+   overflow: hidden;
+}
+.result_convert > h3{
+   background-color: var(--button);
+   color: white;
+   padding: 10px;
+}
+.res_body{
+   padding: 10px;
+}
+.res_body > *{
+   margin: 10px 0;
+}
+.res_body > a{
+   display: block;
+   padding: 10px;
+   text-align: center;
+   text-decoration: none;
+   border: 1px solid var(--button);
+   border-radius: 10px;
+}
+
+
+
+/* ----------------------- */
+
+
+@media (max-width: 1200px) {
+   .convert, .year{
+      width: 375px;
+      padding-right: 25px;
+   }
+   .year{
+      padding-left: 25px;
+   }
+   
+}
+@media  (max-width: 992px){
+   .help_btn_fix_block{
+      display: none;
+   }
+   .convert, .year{
+      width: 50%;
+   }
+   .convert{
+      padding-right: 40px;
+   }
+   .year{
+      padding-left: 40px;
+      padding-right: 0;
+      border-right: none;
+   }
+   .result_convert{
+      width: 50%;
+   }
+}
+@media  (max-width: 768px){
+   .convert > *, .year > *, .res_body > *{
+      font-size: 14px;
+      line-height: 20px;
+   }
+   .convert{
+      padding-right: 20px;
+   }
+   .year{
+      padding-left: 20px;
+   }
+}
+
+@media  (max-width: 640px){
+   .otchet_items{
+      flex-direction: column-reverse;
+   }
+   .otchet_items > *, .result_convert{
+      width: 100%;
+   }
+   .otchet_items > *{
+      padding: 0;
+      border: none;
+   }
+   .year{
+      margin-bottom: 40px;
+      align-items: start;
+   }
+
+}
+@media  (max-width: 530px){
+   
+   .date_block{
+      margin-bottom: 5px;
+   }
+   .date_block > *{
+      font-size: 13px;
+      letter-spacing: normal !important;
+   }
+   .date_block > h3{
+      text-transform: unset;
+   }
+   .event_item{
+      width: 205px;
+   }
+   .event_img {
+      height: 115px;
+   }
+   .event_text {
+      padding: 5px;
+   }
+   .event_text > p{
+      font-size: 13px;
+      letter-spacing: normal;
+   }
+   .event_item > a{
+      width: 95%;
+      font-size: 13px;
+      margin-bottom: 5px;
+   }
+}
+@media  (max-width: 425px){
+   .const-h2{
+      font-size: 14px;
+   }
+   
+   /* .event_item{ width: 90%; } */
+   .event_item{ width: 190px; }
+   .event_text > p{
+      font-size: 12px;
+   }
+}
+@media  (max-width: 375px){
+   .const-h2{
+      font-size: 13px;
+   }
+   
+   .event_img{
+      height: 105px;
+   }
+   .event_item{ width: 170px; }
+   .event_text > p,
+   .event_item > a{
+      font-size: 12px;
+   }
+   .event_item > a{
+      padding: 8px;
+   }
+   .date_text{
+      font-size: 12px;
+   }
+
+}
+@media  (max-width: 360px){
+   .event_item{
+      width: 165px;
+      margin-top: 10px;
+   }
+   .event_text > p,
+   .event_item > a{
+      font-size: 12px;
+   }
+   .event_item > a{
+      padding: 8px;
+   }
+   .date_text{
+      font-size: 12px;
+   }
+}
+@media  (max-width: 320px){
+   .event_item{
+      width: 100%;
+   }
+   .event_img{
+      height: 150px;
+   }
+   .event_text{
+      padding: 10px;
+   }
+   .date_block, .event_item > a{
+      margin-bottom: 10px;
+   }
+   .date_block > *{
+      padding: 5px 0;
+   }
+   .date_block > *, .event_text > p{
+      font-size: 14px;
+   }
+   .date_block > *, .event_text > p{
+      letter-spacing: 1px;
+   }
+   .date_block > h3{
+      text-transform: uppercase;
+      padding-right: 10px;
+   }
+   .date_block > p{
+      padding-left: 10px;
+   }
+   .event_item > a{
+      width: 94%;
+      padding: 15px;
+   }
+
+}
