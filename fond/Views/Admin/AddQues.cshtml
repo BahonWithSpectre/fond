@@ -1,0 +1,34 @@
+﻿@model fond.DbFolder.Question
+
+@{
+    ViewData["Title"] = "AddQues";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<h2>Жаңа сұрақ қосу</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddQues" asp-controller="Admin">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="QuestionName" class="control-label"></label>
+                <input asp-for="QuestionName" class="form-control" />
+                <span asp-validation-for="QuestionName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Answer" class="control-label"></label>
+                <input asp-for="Answer" class="form-control" />
+                <span asp-validation-for="Answer" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="display:none">
+                <input asp-for="QuestionTypeId" value="@ViewBag.Id" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Қосу" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+

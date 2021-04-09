@@ -1,0 +1,62 @@
+﻿
+@model IEnumerable<fond.DbFolder.Event>
+
+@{
+    ViewData["Title"] = "Event";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+    int t = 0;
+}
+
+<h2>CMI біз туралы</h2>
+
+<p>
+    <a asp-action="AddEventCmi" asp-controller="Admin" class="btn btn-success">Жаңа оқиға қосу</a>
+</p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>
+                №
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EventName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Information)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VideoUrl)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @{ t++; }
+                    @t
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EventName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Information)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VideoUrl)
+                </td>
+                <td>
+                    <a href="/Admin/EditEventCmi/@item.Id" class="btn btn-warning">Өзгерту</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

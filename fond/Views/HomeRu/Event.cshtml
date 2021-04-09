@@ -1,0 +1,43 @@
+﻿@model IEnumerable<fond.DbFolder.Event>
+
+
+@{
+    Layout = "~/Views/Shared/_LayoutRu.cshtml";
+}
+<link href="~/css/pro_events.css" rel="stylesheet">
+
+
+<div class="content">
+    <div class="event const-container">
+        <div class="btn_head">
+            <h2 class="const-h2">Оқиғалар</h2>
+            <!-- <a href="#" class="all_event_btn const-h2">Барлық оқиғалар</a> -->
+        </div>
+        <div class="event_items">
+
+            @foreach (var t in Model)
+            {
+                <div class="event_item">
+                    <div class="event_img">
+                        <img src="/img/event.png">
+                    </div>
+                    <div class="event_text">
+                        <div class="date_block">
+                            <h3>@t.EventName</h3>
+                            <p class="date_text">04.09.2020</p>
+                        </div>
+                        <p>
+                            "Мектепке жол" шарасына 500 мыңдай қаражат жиналғанын хабарлай отырып...
+                        </p>
+                    </div>
+                    <a href="/Home/EventDetail">Көру</a>
+                </div>
+            }
+
+
+
+
+            <!-- <a href="#" class="all_event_btn all_event_btn_2 const-h2">Барлық оқиғалар</a> -->
+        </div>
+    </div>
+</div>

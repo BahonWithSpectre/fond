@@ -7,10 +7,13 @@ namespace fond.DbFolder
 {
     public class Question
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
 
         public string QuestionName { get; set; }
 
         public string Answer { get; set; }
+
+        public int QuestionTypeId { get; set; }
+        public QuestionType QuestionType { get; set; }
     }
 }

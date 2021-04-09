@@ -24,5 +24,7 @@ namespace fond.DbFolder
         public DbSet<Convert> Converts { get; set; }
         public DbSet<ConvertProject> ConvertProjects { get; set; }
 
+        public DbSet<QuestionType> QuestionTypes { get; set; }
+
     }
 }

@@ -14,7 +14,7 @@ namespace fond.DbFolder
         public string VideoUrl { get; set; }
 
         public bool? CMI { get; set; }
-
+        public string PhotoUrl { get; set; }
 
         public int? ProjectId { get; set; }
         public Project Project { get; set; }

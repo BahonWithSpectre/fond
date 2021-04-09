@@ -1,0 +1,118 @@
+﻿@model fond.Models.QuesModel
+@{
+    ViewData["Title"] = "Ques";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+    int x = 0, y = 0;
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+<link href="~/css/guide.css" rel="stylesheet">
+
+<div class="content">
+    <div class="guide const-container" style="padding: 0!important;">
+
+        <h2 class="@*const-h2*@">Сұрақ-жауаптар</h2>
+        <a href="/Admin/AddQuesType" class="btn btn-warning">Тақырып қосу</a>
+        <div class="guide_body">
+
+            <div class="sidebar">
+                <div class="guide_tabs">
+                    @foreach (var f in Model.QuestionTypes)
+                    {
+                        x++;
+                        if (x == 1)
+                        {
+                            <a href="#" class="act-tab">@f.TypeName</a>
+                        }
+                        else
+                        {
+                            <a href="#">@f.TypeName</a>
+                        }
+                    }
+
+                    <!-- <a href="#"class="green-tab">Title 3</a> -->
+                </div>
+
+            </div>
+
+            <div class="result" style="width:800px!important;">
+
+                @foreach (var f in Model.QuestionTypes)
+                {
+                    y++;
+                    if (y == 1)
+                    {
+                        <div class="result-item act-result">
+
+                            @foreach(var g in Model.Questions)
+                            {
+                                if(f.Id == g.QuestionTypeId)
+                                {
+                                    <div class="ques_block">
+                                        <h3 class="ques_title">
+                                            1.1. @g.QuestionName
+                                            <i class="fa fa-plus"></i>
+                                        </h3>
+                                        <p class="ques_data">
+                                            @g.Answer
+                                        </p>
+                                    </div>
+                                }
+                            }
+
+                            <br />
+                            <a class="btn btn-success" href="/Admin/AddQues/@f.Id">Сұрақ-жауап қосу</a>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="result-item">
+                            @foreach(var g in Model.Questions)
+                            {
+                                if(f.Id == g.QuestionTypeId)
+                                {
+                                    <div class="ques_block">
+                                        <h3 class="ques_title">
+                                            1.1. @g.QuestionName
+                                            <i class="fa fa-plus"></i>
+                                        </h3>
+                                        <p class="ques_data">
+                                            @g.Answer
+                                        </p>
+                                    </div>
+                                }
+                            }
+                            <br />
+                            <a class="btn btn-success" href="/Admin/AddQues/@f.Id">Сұрақ-жауап қосу</a>
+                        </div>
+                    }
+                }
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<script src="~/js/jQuery.js"></script>
+<script type="text/javascript">
+      $(document).ready(function () {
+         $('.guide_tabs > a').click(function(e) {
+            e.preventDefault();
+            $('.guide_tabs > a').removeClass('act-tab');
+            $(this).addClass('act-tab');
+
+            $('.result-item').removeClass('act-result');
+            $('.result-item').eq($(this).index()).addClass('act-result');
+			});
+
+         $('.ques_title').click(function () {
+            // $('.ques_data').slideUp(50)
+               $(this).next().slideToggle(100)
+               $(this).children('i').toggleClass('act_plus')
+         })
+
+      })
+</script>

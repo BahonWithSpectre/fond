@@ -1,17 +1,24 @@
-﻿<link href="~/css/otchet.css" rel="stylesheet">
+﻿
+@{ 
+    string s = "";
+}
+<link href="~/css/otchet.css" rel="stylesheet">
 
 <div class="content">
     <div class="otchet const-container">
         <div class="otchet_items">
-            <div class="convert">
-                <h2 class="const-h2">Конверт</h2>
-                <p>
-                    Сіз кеңсемізге жеткен "Мейірім конверттерінің" жағдайын тексере аласыз.
-                    Ол үшін өзіңізде қалған талонның артқы жағындағы бірегей номерді енгізіңіз.
-                </p>
-                <input type="number">
-                <button>Конвертті тексеру</button>
-            </div>
+            
+                <form asp-action="Otchet" class="convert">
+                    <h2 class="const-h2">Конверт</h2>
+                    <p>
+                        Сіз кеңсемізге жеткен "Мейірім конверттерінің" жағдайын тексере аласыз.
+                        Ол үшін өзіңізде қалған талонның артқы жағындағы бірегей номерді енгізіңіз.
+                    </p>
+                    <input type="text" name="num">
+                    <button type="submit">Конвертті тексеру</button>
+                </form>
+
+            
             <div class="year">
                 <h2 class="const-h2">Жылдық есептеме</h2>
                 <p>
@@ -28,16 +35,42 @@
                 </span>
             </a>
         </div>
-        <div class="result_convert">
-            <h3>00413 - конверт</h3>
-            <div class="res_body">
-                <p>
-                    Конверттегі сома: 2000 <br>
-                    Қаласы: Астана
-                </p>
-                <a href="">Сілтеме</a>
-                <a href="">Сілтеме</a>
+        @if (ViewBag.Data != null)
+        {
+            if (ViewBag.Data.Id < 10)
+            {
+                s = "0000" + ViewBag.Data.Id.ToString();
+            }
+            else if (ViewBag.Data.Id < 100)
+            {
+                s = "000" + ViewBag.Data.Id.ToString();
+            }
+            else if (ViewBag.Data.Id < 1000)
+            {
+                s = "00" + ViewBag.Data.Id.ToString();
+            }
+
+            <div class="result_convert">
+                <h3>@s - конверт</h3>
+                <div class="res_body">
+                    <p>
+                        Конверттегі сома: @ViewBag.Data.Monay <br>
+                        Қаласы: @ViewBag.Data.City
+                    </p>
+                    <a href="">Сілтеме</a>
+                    <a href="">Сілтеме</a>
+                </div>
             </div>
-        </div>
+        }
+        else if (ViewBag.Error != null)
+        {
+            <div class="result_convert">
+                <h3>@ViewBag.Error</h3>
+                <div class="res_body">
+                   
+                </div>
+            </div>
+        }
+
     </div>
 </div>

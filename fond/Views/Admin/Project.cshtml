@@ -1,0 +1,57 @@
+﻿@model IEnumerable<fond.DbFolder.Project>
+
+@{
+    ViewData["Title"] = "Project";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+    int t = 0;
+}
+
+<h2>Жобалар</h2>
+
+<p>
+    <a asp-action="AddProject" class="btn btn-success">Жаңа жоба қосу</a>
+</p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>
+                №
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VideoUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model)
+{
+        <tr>
+            <td>
+                @{
+                    t++;
+                }
+                <p>@t</p>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProjectName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VideoUrl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                <a href="/Admin/EditProject/@item.Id" class="btn btn-warning">Өзгерту</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

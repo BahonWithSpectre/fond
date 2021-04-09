@@ -10,8 +10,8 @@ using fond.DbFolder;
 namespace fond.Migrations
 {
     [DbContext(typeof(AppDb))]
-    [Migration("20201204141755_mig1")]
-    partial class mig1
+    [Migration("20201228233959_bismillah")]
+    partial class bismillah
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -69,6 +69,8 @@ namespace fond.Migrations
 
                     b.Property<string>("Information");
 
+                    b.Property<string>("PhotoUrl");
+
                     b.Property<int?>("ProjectId");
 
                     b.Property<string>("Title");
@@ -84,8 +86,9 @@ namespace fond.Migrations
 
             modelBuilder.Entity("fond.DbFolder.EventImage", b =>
                 {
-                    b.Property<string>("Id")
-                        .ValueGeneratedOnAdd();
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("EventId");
 
@@ -106,6 +109,8 @@ namespace fond.Migrations
 
                     b.Property<string>("Information");
 
+                    b.Property<string>("Photo");
+
                     b.Property<string>("ProjectName");
 
                     b.Property<string>("Title");
@@ -119,8 +124,9 @@ namespace fond.Migrations
 
             modelBuilder.Entity("fond.DbFolder.ProjectImage", b =>
                 {
-                    b.Property<string>("Id")
-                        .ValueGeneratedOnAdd();
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("ImageUrl");
 
@@ -135,16 +141,34 @@ namespace fond.Migrations
 
             modelBuilder.Entity("fond.DbFolder.Question", b =>
                 {
-                    b.Property<string>("Id")
-                        .ValueGeneratedOnAdd();
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Answer");
 
                     b.Property<string>("QuestionName");
 
+                    b.Property<int>("QuestionTypeId");
+
                     b.HasKey("Id");
 
+                    b.HasIndex("QuestionTypeId");
+
                     b.ToTable("Questions");
+                });
+
+            modelBuilder.Entity("fond.DbFolder.QuestionType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("TypeName");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("QuestionTypes");
                 });
 
             modelBuilder.Entity("fond.DbFolder.ConvertProject", b =>
@@ -180,6 +204,14 @@ namespace fond.Migrations
                     b.HasOne("fond.DbFolder.Project", "Project")
                         .WithMany()
                         .HasForeignKey("ProjectId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("fond.DbFolder.Question", b =>
+                {
+                    b.HasOne("fond.DbFolder.QuestionType", "QuestionType")
+                        .WithMany()
+                        .HasForeignKey("QuestionTypeId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

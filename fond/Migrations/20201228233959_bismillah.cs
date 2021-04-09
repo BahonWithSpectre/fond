@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace fond.Migrations
 {
-    public partial class mig1 : Migration
+    public partial class bismillah : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -29,6 +29,7 @@ namespace fond.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     ProjectName = table.Column<string>(nullable: true),
+                    Photo = table.Column<string>(nullable: true),
                     VideoUrl = table.Column<string>(nullable: true),
                     Title = table.Column<string>(nullable: true),
                     Information = table.Column<string>(nullable: true)
@@ -39,16 +40,16 @@ namespace fond.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Questions",
+                name: "QuestionTypes",
                 columns: table => new
                 {
-                    Id = table.Column<string>(nullable: false),
-                    QuestionName = table.Column<string>(nullable: true),
-                    Answer = table.Column<string>(nullable: true)
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    TypeName = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Questions", x => x.Id);
+                    table.PrimaryKey("PK_QuestionTypes", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -88,6 +89,7 @@ namespace fond.Migrations
                     Information = table.Column<string>(nullable: true),
                     VideoUrl = table.Column<string>(nullable: true),
                     CMI = table.Column<bool>(nullable: true),
+                    PhotoUrl = table.Column<string>(nullable: true),
                     ProjectId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
@@ -105,7 +107,8 @@ namespace fond.Migrations
                 name: "ProjectImages",
                 columns: table => new
                 {
-                    Id = table.Column<string>(nullable: false),
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     ImageUrl = table.Column<string>(nullable: true),
                     ProjectId = table.Column<int>(nullable: false)
                 },
@@ -121,10 +124,32 @@ namespace fond.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Questions",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    QuestionName = table.Column<string>(nullable: true),
+                    Answer = table.Column<string>(nullable: true),
+                    QuestionTypeId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Questions", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Questions_QuestionTypes_QuestionTypeId",
+                        column: x => x.QuestionTypeId,
+                        principalTable: "QuestionTypes",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "EventImages",
                 columns: table => new
                 {
-                    Id = table.Column<string>(nullable: false),
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     ImageUrl = table.Column<string>(nullable: true),
                     EventId = table.Column<int>(nullable: false)
                 },
@@ -163,6 +188,11 @@ namespace fond.Migrations
                 name: "IX_ProjectImages_ProjectId",
                 table: "ProjectImages",
                 column: "ProjectId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Questions_QuestionTypeId",
+                table: "Questions",
+                column: "QuestionTypeId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -184,6 +214,9 @@ namespace fond.Migrations
 
             migrationBuilder.DropTable(
                 name: "Events");
+
+            migrationBuilder.DropTable(
+                name: "QuestionTypes");
 
             migrationBuilder.DropTable(
                 name: "Projects");

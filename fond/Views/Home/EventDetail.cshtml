@@ -1,4 +1,4 @@
-﻿
+﻿@model fond.DbFolder.Event
 <link href="~/css/eventView.css" rel="stylesheet">
 
 
@@ -11,8 +11,8 @@
             </span>
         </a>
         <div class="event_body">
-            <h2 class="const-h2">Отбасыға жылу сыйла</h2>
-            <p class="event_date">18.08.2020</p>
+            <h2 class="const-h2">@Model.EventName</h2>
+            <p class="event_date">Data</p>
             <div class="event_text_more">
                 Достар, жақсы жаңалығымыз бар. «Саби» қайырымдылық қоры
                 серіктестеріне қолдау көрсетуді ұйғарды. Экономикалық дағдарыс
@@ -26,48 +26,22 @@
                 және қорымызға көмектескендердің барлығына алғысымызды білдіреміз.
             </div>
             <div class="event_slider">
-                <div class="mySlides">
-                    <img src="/img/main_bg_2.png">
-                </div>
-                <div class="mySlides">
-                    <img src="/img/main_bg_3.png">
-                </div>
-                <div class="mySlides">
-                    <img src="/img/main_bg_4.png">
-                </div>
+
+                @foreach (var f in ViewBag.Photos)
+                {
+                    <div class="mySlides">
+                        <img src="@f">
+                    </div>
+                }
 
                 <!-- if(mySlides < 2) row -> none; -->
                 <div class="row">
-                    <div class="column">
-                        <img class="demo cursor" src="/img/main_bg_2.png">
-                    </div>
-                    <div class="column">
-                        <img class="demo cursor" src="/img/main_bg_3.png">
-                    </div>
-                    <div class="column">
-                        <img class="demo cursor" src="/img/main_bg_4.png">
-                    </div>
-                    <div class="column">
-                        <img class="demo cursor" src="/img/main_bg_2.png">
-                    </div>
-                    <div class="column">
-                        <img class="demo cursor" src="/img/main_bg_3.png">
-                    </div>
-                    <div class="column">
-                        <img class="demo cursor" src="/img/main_bg_4.png">
-                    </div>
-                    <div class="column">
-                        <img class="demo cursor" src="/img/main_bg_3.png">
-                    </div>
-                    <div class="column">
-                        <img class="demo cursor" src="/img/main_bg_4.png">
-                    </div>
-                    <div class="column">
-                        <img class="demo cursor" src="/img/main_bg_3.png">
-                    </div>
-                    <div class="column">
-                        <img class="demo cursor" src="/img/main_bg_4.png">
-                    </div>
+                    @foreach (var f in ViewBag.Photos)
+                    {
+                        <div class="column">
+                            <img class="demo cursor" src="@f">
+                        </div>
+                    }
                 </div>
             </div>
             <div class="event_video">

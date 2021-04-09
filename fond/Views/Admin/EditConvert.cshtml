@@ -1,0 +1,41 @@
+﻿@model fond.DbFolder.Convert
+
+@{
+    ViewData["Title"] = "EditConvert";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<h2>Конвертті өзгерту</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditConvert">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group" >
+                <label class="control-label">Конверт номері: @Model.Id</label>
+                <input asp-for="Id" style="display:none" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="City" class="control-label"></label>
+                <input asp-for="City" class="form-control" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Monay" class="control-label"></label>
+                <input asp-for="Monay" class="form-control" />
+                <span asp-validation-for="Monay" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Text" class="control-label"></label>
+                <input asp-for="Text" class="form-control" />
+                <span asp-validation-for="Text" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Сақтау" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+

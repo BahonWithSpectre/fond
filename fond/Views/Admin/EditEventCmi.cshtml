@@ -1,0 +1,75 @@
+﻿@model fond.DbFolder.Event
+
+@{
+    ViewData["Title"] = "EditEvent";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<h2>СМИ туралы Жобаны өзгерту</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditEventCmi">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group" style="display:none;">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EventName" class="control-label"></label>
+                <input asp-for="EventName" class="form-control" />
+                <span asp-validation-for="EventName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Information" class="control-label"></label>
+                <input asp-for="Information" class="form-control" />
+                <span asp-validation-for="Information" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VideoUrl" class="control-label"></label>
+                <input asp-for="VideoUrl" class="form-control" />
+                <span asp-validation-for="VideoUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="display:none;">
+                <label asp-for="CMI" class="control-label"></label>
+                <input asp-for="CMI" class="form-control" />
+                <span asp-validation-for="CMI" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhotoUrl" class="control-label"></label>
+                <input asp-for="PhotoUrl" class="form-control" />
+                <span asp-validation-for="PhotoUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <p style="border:1px solid #ff6a00;border-radius:5px;padding:4px;">Жоба бойынша: @Model.Project.ProjectName</p>
+                <label class="control-label">жобаны өзгертетін болсаңыз  таңдаңыз!</label>
+                <select name="ProjectId" class="form-control">
+                    @foreach (var f in ViewBag.Project)
+                    {
+                        if (f.Id == Model.ProjectId)
+                        {
+                            <option value="@f.Id" selected>@f.ProjectName</option>
+                        }
+                        else
+                        {
+                            <option value="@f.Id">@f.ProjectName</option>
+                        }
+
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Өзгерту" class="btn btn-warning" />
+            </div>
+        </form>
+    </div>
+</div>
+
+

@@ -1,0 +1,155 @@
+﻿@model fond.DbFolder.Project
+
+@{
+    ViewData["Title"] = "ProjectDetail";
+    Layout = "~/Views/Shared/_LayoutRu.cshtml";
+}
+
+
+
+<link href="~/css/eventView.css" rel="stylesheet">
+
+
+<div class="content">
+    <div class="event const-container">
+        <a href="#" class="help_btn_fix_block big_fix_btn_help">
+            <span class="help_btn_fix const-h2">
+                Көмектесу
+                <img src="/img/help_icon.png">
+            </span>
+        </a>
+        <div class="event_body">
+            <h2 class="const-h2">@Model.ProjectName</h2>
+            <div class="event_text_more">
+                Достар, жақсы жаңалығымыз бар. «Саби» қайырымдылық қоры
+                серіктестеріне қолдау көрсетуді ұйғарды. Экономикалық дағдарыс
+                кезінде аяққа тұруға және жабылмауға көмектесу үшін, екі қордың
+                барлық әкімшілік шығындары мен жалақысы бойынша өтемақы түрінде
+                3 айға қаржылық көмек алды.Осы қорлардың бірі Шұғыла қоры болды.
+                Көмек алған тағы бір қор - «Расима Фудбанк Казахстан»  қоры.
+                Аталған қор қарт азаматтарға, аз қамтылған адамдарға және ерекше
+                қажеттіліктері бар адамдарға тегін түскі астар ұйымдастырады.
+                Көрсетілген көмек үшін «Саби» қайырымдылық қорына, Асель Имангалиқызына
+                және қорымызға көмектескендердің барлығына алғысымызды білдіреміз.
+            </div>
+            <div class="event_slider">
+                @foreach (var f in ViewBag.Photos)
+                {
+                    <div class="mySlides">
+                        <img src="@f">
+                    </div>
+                }
+                
+
+                <!-- if(mySlides < 2) row -> none; -->
+                <div class="row">
+                    @foreach (var f in ViewBag.Photos)
+                    {
+                        <div class="column">
+                            <img class="demo cursor" src="@f">
+                        </div>
+                    }
+
+                </div>
+            </div>
+            <div class="event_video">
+                <iframe src="https://www.youtube.com/embed/OMWkOTvpRs0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="btn_head">
+            <h2 class="const-h2">Оқиғалар</h2>
+            <a href="events.html" class="all_event_btn const-h2">Барлық оқиғалар</a>
+        </div>
+        <div class="event_items">
+            <div class="event_item">
+                <div class="event_img">
+                    <img src="/img/event.png">
+                </div>
+                <div class="event_text">
+                    <div class="date_block">
+                        <h3>Отбасыға жылу сыйла</h3>
+                        <p class="date_text">04.09.2020</p>
+                    </div>
+                    <p>
+                        "Мектепке жол" шарасына 500 мыңдай қаражат жиналғанын хабарлай отырып...
+                    </p>
+                </div>
+                <a href="">Көру</a>
+            </div>
+
+            <div class="event_item">
+                <div class="event_img">
+                    <img src="/img/event.png">
+                </div>
+                <div class="event_text">
+                    <div class="date_block">
+                        <h3>Берекелі айт</h3>
+                        <p class="date_text">04.09.2020</p>
+                    </div>
+                    <p>Siberian Wellness компаниясынан дәрігерлерге көмек</p>
+                </div>
+                <a href="">Көру</a>
+            </div>
+
+            <div class="event_item">
+                <div class="event_img">
+                    <img src="/img/event.png">
+                </div>
+                <div class="event_text">
+                    <div class="date_block">
+                        <h3>Отбасыға жылу сыйла</h3>
+                        <p class="date_text">04.09.2020</p>
+                    </div>
+                    <p>Siberian Wellness компаниясынан дәрігерлерге көмек</p>
+                </div>
+                <a href="">Көру</a>
+            </div>
+
+            <div class="event_item">
+                <div class="event_img">
+                    <img src="/img/event.png">
+                </div>
+                <div class="event_text">
+                    <div class="date_block">
+                        <h3>Отбасыға жылу сыйла</h3>
+                        <p class="date_text">04.09.2020</p>
+                    </div>
+                    <p>Siberian Wellness компаниясынан дәрігерлерге көмек</p>
+                </div>
+                <a href="">Көру</a>
+            </div>
+            <a href="events.html" class="all_event_btn all_event_btn_2 const-h2">Барлық оқиғалар</a>
+        </div>
+    </div>
+</div>
+
+
+<script src="~/js/slider.min.js"></script>
+<script type="text/javascript">
+    var slideIndex = 1;
+    var column = document.querySelector('.column');
+    showSlides(slideIndex);
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "flex";
+        dots[slideIndex - 1].className += " active";
+    }
+
+    $(document).ready(function () {
+        $('.column').on('click', function currentSlide() {
+            showSlides(slideIndex = $(this).index() + 1);
+        });
+    });
+</script>

@@ -26,4 +26,10 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.10" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+    <Folder Include="wwwroot\css\Новая папка\" />
+    <Folder Include="wwwroot\Project\" />
+  </ItemGroup>
+
 </Project>

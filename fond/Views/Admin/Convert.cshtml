@@ -1,0 +1,69 @@
+﻿@model IEnumerable<fond.DbFolder.Convert>
+
+@{
+    ViewData["Title"] = "Convert";
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+    string s="";
+}
+
+<h2>Конверттер</h2>
+
+<p>
+    <a asp-action="AddConvert" class="btn btn-success">Жаңа конверт қосу</a>
+</p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>
+                №
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Monay)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Text)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @{ 
+                    
+                    if (item.Id <10)
+                    {
+                        s= "0000" + item.Id.ToString();
+                    }
+                    else if(item.Id<100)
+                    {
+                        s = "000" + item.Id.ToString();
+                    }
+                    else if (item.Id < 1000)
+                    {
+                        s = "00" + item.Id.ToString();
+                    }
+                }
+
+                @s
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Monay)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Text)
+            </td>
+            <td>
+                <a class="btn btn-warning" href="/Admin/EditConvert/@item.Id">Өзгерту</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

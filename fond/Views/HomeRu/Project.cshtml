@@ -1,0 +1,38 @@
+﻿@model IEnumerable<fond.DbFolder.Project>
+
+@{
+    Layout = "~/Views/Shared/_LayoutRu.cshtml";
+}
+<link href="~/css/pro_events.css" rel="stylesheet">
+
+
+<div class="content">
+    <div class="event const-container">
+        <div class="btn_head">
+            <h2 class="const-h2">Жобалар</h2>
+        </div>
+        <div class="event_items">
+            @foreach (var f in Model)
+            {
+                <div class="event_item">
+                    <div class="event_img">
+                        <img src="@f.Photo">
+                    </div>
+                    <div class="event_text">
+                        <div class="date_block">
+                            <h3>@f.ProjectName</h3>
+                            <p class="date_text">04.09.2020</p>
+                        </div>
+                        <p>
+                            @f.Title
+                        </p>
+                    </div>
+                    <div class="event_btn_block">
+                        <a href="/Home/ProjectDetail/@f.Id">Көру</a>
+                        <a href="">Көмектесу</a>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
