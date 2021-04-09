@@ -306,8 +306,8 @@
       font-size: 14px;
    }
    
-   /* .event_item{ width: 90%; } */
-   .event_item{ width: 190px; }
+    .event_item{ width: 48%; } 
+/*   .event_item{ width: 190px; }*/
    .event_text > p{
       font-size: 12px;
    }
@@ -320,7 +320,7 @@
    .event_img{
       height: 105px;
    }
-   .event_item{ width: 170px; }
+/*   .event_item{ width: 170px; }*/
    .event_text > p,
    .event_item > a{
       font-size: 12px;
@@ -335,7 +335,7 @@
 }
 @media  (max-width: 360px){
    .event_item{
-      width: 165px;
+/*      width: 165px;*/
       margin-top: 10px;
    }
    .event_text > p,

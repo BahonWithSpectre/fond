@@ -961,11 +961,14 @@ a.otchet_btn:hover{ color: white; }
     }
 
     .pay_body_kaspi > img{
-        width: 55%;
+        width: 50%;
         margin-right: 7px;
     }
     .kaspi_text > p{
         font-size: 16px;
+    }
+    .pay_body_convert {
+        overflow-y: scroll;
     }
     .pay_body_convert > p, .convert_form > input, .convert_form > button{
         font-size: 14px;
@@ -978,9 +981,12 @@ a.otchet_btn:hover{ color: white; }
    }
 }
 @media  (max-width: 425px){
-   .const-h2{
-      font-size: 13px;
-   }
+    .pay_body_kaspi > img {
+        display: none;
+    }
+    .const-h2 {
+        font-size: 13px;
+    }
 }
 @media  (max-width: 375px){
    .logo{
@@ -1007,9 +1013,6 @@ a.otchet_btn:hover{ color: white; }
    }
    .kaspi_text > p{
       font-size: 14px;
-   }
-   .pay_body_convert{
-      overflow-y: scroll;
    }
    .pay_form > p, .pay_form > input, .pay_btn_block > button, .pay_body_bank > span, .pay_body_bank strong{
       font-size: 13px;

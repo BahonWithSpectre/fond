@@ -37,7 +37,7 @@ namespace fond.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login(LoginModel model)
+        public IActionResult Login(LoginModel model)
         {
             const string NameC = "Fadmin";
             const string Password = "Fadmin";
