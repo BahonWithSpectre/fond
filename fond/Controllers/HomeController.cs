@@ -20,7 +20,7 @@ namespace fond.Controllers
         }
         public IActionResult Index()
         {
-            ViewBag.Project = db.Projects.ToList();
+            //ViewBag.Project = db.Projects.ToList();
             return View();
         }
 
@@ -112,7 +112,10 @@ namespace fond.Controllers
 
 
 
-
+        public IActionResult Kino()
+        {
+            return View();
+        }
 
 
 

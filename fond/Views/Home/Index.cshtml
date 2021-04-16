@@ -1,7 +1,10 @@
 ﻿
+
 <link href="~/css/index.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="~/slick/slick.css" />
 <link rel="stylesheet" type="text/css" href="~/slick/slick-theme.css" />
+
+
 
 <div class="content">
     <div id="main" class="main-wrap">
@@ -18,17 +21,16 @@
         </div>
     </div>
     <div class="sect-nav">
-        @foreach (var f in ViewBag.Project)
+        @*@foreach (var f in ViewBag.Project)
         {
             <a href="/Home/ProjectDetail/@f.Id">@f.ProjectName</a>
-        }
+        }*@
     </div>
     <div class="help-wrap">
         <div class="help const-container">
-            <h2 class="const-h2">Сенімділік Төлқұжат</h2>
+            <h2 class="const-h2" style="border-left: 6px solid #5395f1;color: black!important;background-color: #d3eff97a!important;border-radius:0!important;box-shadow:none!important;">Сенімділік Төлқұжат</h2>
             <div class="help_items">
-
-                <!-- MODAL -->
+                
                 <div class="modal-screen">
                     <div class="modal-bg"></div>
                     <div class="modal-window">
@@ -37,7 +39,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- MODAL -->
 
                 <div class="senim">
                     <div class="img-big">
@@ -113,8 +114,8 @@
                         </span>
 
                         @*<span>
-            <strong>БИК:</strong> CASPKZKA
-        </span>*@
+                    <strong>БИК:</strong> CASPKZKA
+                </span>*@
                         <span>
                             <strong>БИН:</strong> 180140011767
                         </span>
@@ -128,8 +129,8 @@
                             <strong>Кбе:</strong> 18
                         </span>
                         @*<span>
-            <strong>КНП:</strong> 119
-        </span>*@
+                    <strong>КНП:</strong> 119
+                </span>*@
                         <span>
                             <strong>Адрес:</strong> Шымкент г.а., Шымкент, Шолохова , дом 179А
                         </span>
