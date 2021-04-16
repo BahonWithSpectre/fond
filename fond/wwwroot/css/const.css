@@ -6,15 +6,6 @@
    --blueDark: #7bccfb;
    --blueOther: #7bccfb;
    --blueLight: #7bccfb;
-   /* --blueDark: #f05e51;
-   --blueOther: #f05e51;
-   --blueLight: #f05e51; */
-   /* --greenLight: #86a850;
-   --greenDark: #7e9820;
-   --greenExtraLight: #b2cb59; */
-   /* --greenLight: #17623d;
-   --greenDark: #17623d;
-   --greenExtraLight: #17623d; */
    --greenLight: rgb(31, 104, 66);
    --greenDark: #1f6842;
    --greenExtraLight: #1f6842;
@@ -367,16 +358,35 @@ a.otchet_btn:hover{ color: white; }
     top: 13px;
 }
 
-/* ------------------- */
+.sum_year_mobile {
+    width: calc(100% + 16%);
+    margin-left: -8%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    background-color: #bfbf02;
+    padding: 15px 8%;
+}
+.sum_year_mobile > p{
+    color: #fff;
+    margin-bottom: 8px;
+}
+.sum_year_mobile > .otchet_btn {
+    color: #fff;
+    text-decoration: none;
+}
 
-.footer-wrap{
-   /* background-image: url(../img/main_bg_3.png); */
-   background-image: url(../img/footer-fon.jpg);
-   background-size: cover;
-   background-repeat: no-repeat;
-   background-position: center;
-   /* background-position: center -420px; */
-   position: relative;
+
+
+/* ------------------- */
+.footer-wrap {
+    /* background-image: url(../img/main_bg_3.png); */
+    background-image: url(../img/footer-fon.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* background-position: center -420px; */
+    position: relative;
 }
 .footer-bg{
    /* display: none; */
